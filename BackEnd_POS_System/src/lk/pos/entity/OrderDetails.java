@@ -1,54 +1,66 @@
 package lk.pos.entity;
 
-import java.util.Date;
+import java.sql.Connection;
+import java.util.ArrayList;
 
 /**
  * @author : A.D.Liyanage
  * @since : 0.1.0
  **/
 
-public class OrderDetails {
-    private String orderId;
-    private String cId;
-    private Date orderDate;
+public class OrderDetails extends ArrayList<OrderDetails> {
+
+    private String oId;
+    private String iCode;
+    private int qty;
+    private double price;
     private double total;
-    private double discount;
-    private double subTotal;
 
-    public Orders() {
+    public OrderDetails() {
     }
 
-    public Orders(String orderId, String cId, Date orderDate, double total, double discount, double subTotal) {
-        this.orderId = orderId;
-        this.cId = cId;
-        this.orderDate = orderDate;
+    public OrderDetails(String oId, String iCode, int qty, double price, double total) {
+        this.oId = oId;
+        this.iCode = iCode;
+        this.qty = qty;
+        this.price = price;
         this.total = total;
-        this.discount = discount;
-        this.subTotal = subTotal;
     }
 
-    public String getOrderId() {
-        return orderId;
+    public OrderDetails(String getoId, String getiCode, int getoQty, double price, double total, Connection connection) {
+
     }
 
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
+    public String getoId() {
+        return oId;
     }
 
-    public String getcId() {
-        return cId;
+    public void setoId(String oId) {
+        this.oId = oId;
     }
 
-    public void setcId(String cId) {
-        this.cId = cId;
+    public String getiCode() {
+        return iCode;
     }
 
-    public Date getOrderDate() {
-        return orderDate;
+    public void setiCode(String iCode) {
+        this.iCode = iCode;
     }
 
-    public void setOrderDate(Date orderDate) {
-        this.orderDate = orderDate;
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public double getTotal() {
@@ -57,21 +69,5 @@ public class OrderDetails {
 
     public void setTotal(double total) {
         this.total = total;
-    }
-
-    public double getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(double discount) {
-        this.discount = discount;
-    }
-
-    public double getSubTotal() {
-        return subTotal;
-    }
-
-    public void setSubTotal(double subTotal) {
-        this.subTotal = subTotal;
     }
 }
