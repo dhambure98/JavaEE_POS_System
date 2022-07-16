@@ -7,3 +7,4 @@ package lk.pos.dao;
 
 public interface SuperDAO {
 }
+
